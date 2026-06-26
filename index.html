@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrainLab - Train your brain while having fun</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <span class="logo-text">&lt;BrainLab/&gt;</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#games">Games</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#roadmap">Roadmap</a></li>
+                <li><a href="#footer">GitHub</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="typing-text">BrainLab</span>
+                    <span class="cursor">|</span>
+                </h1>
+                <p class="hero-subtitle">Train your brain while having fun.</p>
+                <button class="btn btn-primary btn-glow" onclick="document.getElementById('games').scrollIntoView({behavior: 'smooth'})">
+                    <span class="btn-text">Play Soon</span>
+                    <span class="btn-glow-effect"></span>
+                </button>
+            </div>
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <div class="terminal-buttons">
+                        <div class="terminal-btn close"></div>
+                        <div class="terminal-btn minimize"></div>
+                        <div class="terminal-btn maximize"></div>
+                    </div>
+                    <span class="terminal-title">brainlab.exe</span>
+                </div>
+                <div class="terminal-body">
+                    <p>> initializing neural network...</p>
+                    <p>> loading game modules...</p>
+                    <p class="scan-line"></p>
+                    <p>> <span class="text-success">✓ System Ready</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Games Section -->
+    <section id="games" class="games">
+        <div class="container">
+            <h2 class="section-title">Our Games</h2>
+            <div class="games-grid">
+                <div class="game-card" data-aos="fade-up">
+                    <div class="game-card-inner">
+                        <div class="game-icon">🚩</div>
+                        <h3>Flag Memory</h3>
+                        <p>Test your memory with flags from around the world. Remember the sequence and prove your skills!</p>
+                        <div class="card-footer">Coming Soon</div>
+                    </div>
+                </div>
+
+                <div class="game-card" data-aos="fade-up">
+                    <div class="game-card-inner">
+                        <div class="game-icon">🔮</div>
+                        <h3>Tech Matrix</h3>
+                        <p>Navigate through a matrix of technology puzzles. Solve sequences and unlock new levels.</p>
+                        <div class="card-footer">Coming Soon</div>
+                    </div>
+                </div>
+
+                <div class="game-card" data-aos="fade-up">
+                    <div class="game-card-inner">
+                        <div class="game-icon">🔧</div>
+                        <h3>Pipeline Panic</h3>
+                        <p>Connect the pipes before time runs out. Fast-paced gameplay that tests your reflexes.</p>
+                        <div class="card-footer">Coming Soon</div>
+                    </div>
+                </div>
+
+                <div class="game-card" data-aos="fade-up">
+                    <div class="game-card-inner">
+                        <div class="game-icon">📦</div>
+                        <h3>Inventory Match</h3>
+                        <p>Match items from your inventory. Strategic thinking meets quick reactions.</p>
+                        <div class="card-footer">Coming Soon</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Features</h2>
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up">
+                    <div class="feature-icon">📱</div>
+                    <h3>Responsive</h3>
+                    <p>Works seamlessly on all devices, from mobile to desktop.</p>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Fast</h3>
+                    <p>Optimized performance with vanilla JavaScript for lightning-quick gameplay.</p>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up">
+                    <div class="feature-icon">🔓</div>
+                    <h3>Open Source</h3>
+                    <p>Built with transparency. Contribute and improve the platform.</p>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up">
+                    <div class="feature-icon">✨</div>
+                    <h3>Vanilla JS</h3>
+                    <p>No heavy frameworks. Pure, clean, and efficient code.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section id="roadmap" class="roadmap">
+        <div class="container">
+            <h2 class="section-title">Roadmap</h2>
+            <div class="roadmap-items">
+                <div class="roadmap-item" data-aos="fade-up">
+                    <div class="roadmap-marker">v1.0</div>
+                    <div class="roadmap-content">
+                        <h3>Alpha Launch</h3>
+                        <p>Initial release with core games and landing page</p>
+                    </div>
+                </div>
+
+                <div class="roadmap-item" data-aos="fade-up">
+                    <div class="roadmap-marker">v1.1</div>
+                    <div class="roadmap-content">
+                        <h3>Community Features</h3>
+                        <p>Leaderboard, user profiles, and social sharing</p>
+                    </div>
+                </div>
+
+                <div class="roadmap-item" data-aos="fade-up">
+                    <div class="roadmap-marker">v1.2</div>
+                    <div class="roadmap-content">
+                        <h3>Advanced Games</h3>
+                        <p>New game modes, difficulty levels, and achievements</p>
+                    </div>
+                </div>
+
+                <div class="roadmap-item" data-aos="fade-up">
+                    <div class="roadmap-marker">v2.0</div>
+                    <div class="roadmap-content">
+                        <h3>Mobile App</h3>
+                        <p>Native mobile applications for iOS and Android</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; 2026 BrainLab. All rights reserved.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/yourusername/brainlab" target="_blank" class="footer-link">
+                        <span>GitHub Repository</span>
+                        <span class="github-icon">↗</span>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-line"></div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
