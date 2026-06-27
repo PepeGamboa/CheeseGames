@@ -1,5 +1,5 @@
 ````markdown
-# 🧀 CheeseGames
+# 🧀 Cheese 🧠 Games
 
 > **Train your brain while having fun.**
 

@@ -39,7 +39,7 @@ class TypingAnimation {
 document.addEventListener('DOMContentLoaded', () => {
     const typingElement = document.querySelector('.typing-text');
     if (typingElement) {
-        const typing = new TypingAnimation(typingElement, 'CheeseGames', 100);
+        const typing = new TypingAnimation(typingElement, 'Cheese 🧠 Games', 100);
         typing.start();
     }
 });
@@ -425,6 +425,6 @@ window.addEventListener('unhandledrejection', (event) => {
 // INITIALIZATION
 // ============================================
 
-console.log('%c🧠 CheeseGames v1.0 - Initialized', 'color: #00ff41; font-size: 14px; font-weight: bold; text-shadow: 0 0 10px #00ff41;');
+console.log('%c🧀 Cheese 🧠 Games v1.0 - Initialized', 'color: #00ff41; font-size: 14px; font-weight: bold; text-shadow: 0 0 10px #00ff41;');
 console.log('%cRetro Cyber Terminal Aesthetic', 'color: #00d4ff; font-size: 12px;');
 console.log('%cBuilt with pure HTML5, CSS3, and Vanilla JavaScript', 'color: #a000ff; font-size: 12px;');
