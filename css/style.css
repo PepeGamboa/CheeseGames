@@ -272,6 +272,7 @@ p {
 
 /* Glowing Button */
 .btn {
+    display: inline-block;
     padding: 12px 30px;
     font-size: 1rem;
     font-family: 'Courier New', monospace;
@@ -285,11 +286,26 @@ p {
     letter-spacing: 1px;
     font-weight: bold;
     text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    line-height: 1.4;
 }
 
 .btn-primary {
     border-color: var(--primary-color);
     color: var(--primary-color);
+}
+
+.btn-secondary {
+    border-color: var(--secondary-color);
+    color: var(--secondary-color);
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.5rem;
 }
 
 .btn-glow {
