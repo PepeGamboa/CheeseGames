@@ -1592,3 +1592,161 @@ p {
 }
 .inv-shake { animation: invShake 0.4s ease; }
 
+/* ============================================
+   CROSSWALK DASH GAME
+   ============================================ */
+
+.crosswalk-game {
+    padding: 2rem 0 4rem;
+}
+
+.crosswalk-board-wrapper {
+    max-width: 720px;
+    margin: 0 auto;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(0, 255, 65, 0.1);
+}
+
+.crosswalk-board {
+    display: flex;
+    flex-direction: column;
+    background: var(--background);
+    outline: none;
+}
+
+.cw-row {
+    position: relative;
+    width: 100%;
+    height: 56px;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.cw-lane {
+    background: repeating-linear-gradient(
+        90deg,
+        var(--surface) 0px,
+        var(--surface) 38px,
+        var(--surface-light) 40px,
+        var(--surface-light) 42px
+    );
+}
+
+.cw-lane::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    transform: translateY(-50%);
+    background: repeating-linear-gradient(
+        90deg,
+        rgba(255, 200, 0, 0.35) 0px,
+        rgba(255, 200, 0, 0.35) 18px,
+        transparent 18px,
+        transparent 34px
+    );
+    pointer-events: none;
+}
+
+.cw-sidewalk {
+    background: linear-gradient(180deg, rgba(0, 255, 65, 0.06), rgba(0, 255, 65, 0.02));
+    border-top: 2px solid rgba(0, 255, 65, 0.25);
+    border-bottom: 2px solid rgba(0, 255, 65, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cw-sidewalk-start { height: 50px; }
+.cw-sidewalk-end { height: 64px; }
+
+.cw-goal-flag {
+    font-size: 1.6rem;
+    filter: drop-shadow(0 0 8px rgba(0, 255, 65, 0.5));
+}
+
+.cw-vehicle {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    will-change: transform;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+.cw-player {
+    position: absolute;
+    top: 50%;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    line-height: 1;
+    transform: translate(-50%, -50%);
+    transition: left 0.12s ease-out;
+    filter: drop-shadow(0 0 6px rgba(0, 255, 65, 0.5));
+    z-index: 5;
+}
+
+.cw-player.cw-hit {
+    animation: cwHitFlash 0.5s ease;
+}
+
+@keyframes cwHitFlash {
+    0%, 100% { filter: drop-shadow(0 0 6px rgba(255, 68, 68, 0.9)); transform: translate(-50%, -50%) scale(1); }
+    50% { filter: drop-shadow(0 0 14px rgba(255, 68, 68, 1)); transform: translate(-50%, -50%) scale(1.3); }
+}
+
+.crosswalk-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    max-width: 220px;
+    margin: 1.5rem auto 0;
+}
+
+.cw-ctrl-row {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.cw-ctrl-btn {
+    width: 56px;
+    height: 56px;
+    font-size: 1.3rem;
+    border: 2px solid var(--primary-color);
+    background: var(--surface);
+    color: var(--primary-color);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: 'Courier New', monospace;
+}
+
+.cw-ctrl-btn:hover {
+    background: rgba(0, 255, 65, 0.12);
+    box-shadow: 0 0 12px rgba(0, 255, 65, 0.3);
+}
+
+.cw-ctrl-btn:active {
+    transform: scale(0.92);
+}
+
+@media (min-width: 769px) {
+    .crosswalk-controls {
+        display: none;
+    }
+}
+
+

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="crosswalk.page.title">Crosswalk Dash | 🧀 Cheese 🧠 Games</title>
+    <meta name="description" data-i18n="crosswalk.page.description" content="Dodge traffic and cross the street safely in this fast reflex arcade game.">
+    <meta name="theme-color" content="#00ff66">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <a class="logo-text" href="index.html">🧀 Cheese 🧠 Games</a>
+            </div>
+            <div class="lang-selector" aria-label="Language selector">
+                <button type="button" class="lang-flag active" data-lang="en" title="English">🇬🇧</button>
+                <button type="button" class="lang-flag" data-lang="es" title="Español">🇪🇸</button>
+                <button type="button" class="lang-flag" data-lang="it" title="Italiano">🇮🇹</button>
+                <button type="button" class="lang-flag" data-lang="fr" title="Français">🇫🇷</button>
+                <button type="button" class="lang-flag" data-lang="de" title="Deutsch">🇩🇪</button>
+                <button type="button" class="lang-flag" data-lang="pt" title="Português">🇵🇹</button>
+                <button type="button" class="lang-flag" data-lang="hi" title="हिन्दी">🇮🇳</button>
+                <button type="button" class="lang-flag" data-lang="ko" title="한국어">🇰🇷</button>
+                <button type="button" class="lang-flag" data-lang="ja" title="日本語">🇯🇵</button>
+                <button type="button" class="lang-flag" data-lang="zh" title="中文">🇨🇳</button>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+                <li><a href="index.html#games" data-i18n="nav.games">Games</a></li>
+                <li><a href="index.html#features" data-i18n="nav.features">Features</a></li>
+                <li><a href="index.html#roadmap" data-i18n="nav.roadmap">Roadmap</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero game-hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <span class="hero-badge" data-i18n="crosswalk.hero.badge">Reflexes • Traffic • Speed</span>
+                <h1 class="hero-title" data-i18n="crosswalk.hero.title">Crosswalk Dash</h1>
+                <p class="hero-subtitle" data-i18n="crosswalk.hero.subtitle">Dodge cars, trucks and motorcycles to cross the street safely. Quick reflexes and timing are your best friends!</p>
+                <div class="hero-buttons">
+                    <button type="button" class="btn btn-primary" id="startCrosswalkButton" data-i18n="crosswalk.hero.start">Start New Game</button>
+                    <a class="btn btn-secondary" href="index.html" data-i18n="crosswalk.hero.back">Back to Home</a>
+                </div>
+            </div>
+            <div class="flag-summary">
+                <div class="flag-summary-card">
+                    <h3 data-i18n="crosswalk.summary.title">How to play</h3>
+                    <p data-i18n="crosswalk.summary.description">Use the arrow keys or WASD to move your character up, down, left or right. Reach the top sidewalk without getting hit. Watch out — traffic gets faster with every level!</p>
+                    <div class="game-stats">
+                        <div class="stat-item">
+                            <span class="stat-label" data-i18n="crosswalk.stats.level">Level</span>
+                            <span class="stat-value" id="cwLevel">1</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label" data-i18n="crosswalk.stats.lives">Lives</span>
+                            <span class="stat-value" id="cwLives">❤️❤️❤️</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label" data-i18n="crosswalk.stats.score">Score</span>
+                            <span class="stat-value" id="cwScore">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="crosswalk-game">
+        <div class="container">
+            <div class="crosswalk-board-wrapper">
+                <div class="crosswalk-board" id="crosswalkBoard" aria-live="polite" tabindex="0"></div>
+            </div>
+
+            <!-- Mobile / touch controls -->
+            <div class="crosswalk-controls" id="crosswalkControls" aria-label="Movement controls">
+                <button type="button" class="cw-ctrl-btn cw-up" data-dir="up" aria-label="Move up">▲</button>
+                <div class="cw-ctrl-row">
+                    <button type="button" class="cw-ctrl-btn cw-left" data-dir="left" aria-label="Move left">◀</button>
+                    <button type="button" class="cw-ctrl-btn cw-down" data-dir="down" aria-label="Move down">▼</button>
+                    <button type="button" class="cw-ctrl-btn cw-right" data-dir="right" aria-label="Move right">▶</button>
+                </div>
+            </div>
+
+            <div class="game-message hidden" id="cwMessage">
+                <h2 id="cwMessageTitle">🎉 Level Complete!</h2>
+                <p class="message-details" id="cwDetails"></p>
+                <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:1rem;">
+                    <button class="btn btn-primary" id="cwRetry" data-i18n="crosswalk.retry">Retry Level</button>
+                    <button class="btn btn-secondary" id="cwNextLevel" style="display:none;" data-i18n="crosswalk.next">Next Level →</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/crosswalk-dash.js"></script>
+    <script src="js/navigation-fix.js"></script>
+</body>
+</html>
