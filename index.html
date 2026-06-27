@@ -1,194 +1,889 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BrainLab - Train your brain while having fun</title>
-    <link rel="stylesheet" href="style.css">
+
+    <title>🧀 CheeseGames | Learn. Play. Improve.</title>
+
+    <meta name="description"
+        content="CheeseGames is an open-source collection of educational browser games designed to improve memory, logic and problem solving.">
+
+    <meta name="theme-color" content="#00ff66">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 </head>
+
 <body>
-    <!-- Navigation -->
+
+    <!-- ========================= -->
+    <!-- MATRIX BACKGROUND -->
+    <!-- ========================= -->
+
+    <canvas id="matrixCanvas"></canvas>
+
+    <div class="matrix-overlay"></div>
+
+    <!-- ========================= -->
+    <!-- NAVIGATION -->
+    <!-- ========================= -->
+
     <nav class="navbar">
+
         <div class="container nav-container">
+
             <div class="logo">
-                <span class="logo-text">&lt;BrainLab/&gt;</span>
+
+                <span class="logo-text">
+                    🧀 CheeseGames
+                </span>
+
             </div>
+
             <ul class="nav-links">
-                <li><a href="#games">Games</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#roadmap">Roadmap</a></li>
-                <li><a href="#footer">GitHub</a></li>
+
+                <li>
+                    <a href="#games">
+                        Games
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#features">
+                        Features
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#roadmap">
+                        Roadmap
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#footer">
+                        GitHub
+                    </a>
+                </li>
+
             </ul>
+
         </div>
+
     </nav>
 
-    <!-- Hero Section -->
+    <!-- ========================= -->
+    <!-- HERO -->
+    <!-- ========================= -->
+
     <section id="hero" class="hero">
-        <div class="container">
+
+        <div class="container hero-container">
+
             <div class="hero-content">
+
+                <span class="hero-badge">
+
+                    Open Source • HTML • CSS • JavaScript
+
+                </span>
+
                 <h1 class="hero-title">
-                    <span class="typing-text">BrainLab</span>
+
+                    <span class="typing-text">
+
+                        CheeseGames
+
+                    </span>
+
                     <span class="cursor">|</span>
+
                 </h1>
-                <p class="hero-subtitle">Train your brain while having fun.</p>
-                <button class="btn btn-primary btn-glow" onclick="document.getElementById('games').scrollIntoView({behavior: 'smooth'})">
-                    <span class="btn-text">Play Soon</span>
-                    <span class="btn-glow-effect"></span>
-                </button>
-            </div>
-            <div class="terminal-window">
-                <div class="terminal-header">
-                    <div class="terminal-buttons">
-                        <div class="terminal-btn close"></div>
-                        <div class="terminal-btn minimize"></div>
-                        <div class="terminal-btn maximize"></div>
-                    </div>
-                    <span class="terminal-title">brainlab.exe</span>
-                </div>
-                <div class="terminal-body">
-                    <p>> initializing neural network...</p>
-                    <p>> loading game modules...</p>
-                    <p class="scan-line"></p>
-                    <p>> <span class="text-success">✓ System Ready</span></p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Games Section -->
-    <section id="games" class="games">
-        <div class="container">
-            <h2 class="section-title">Our Games</h2>
-            <div class="games-grid">
-                <div class="game-card" data-aos="fade-up">
-                    <div class="game-card-inner">
-                        <div class="game-icon">🚩</div>
-                        <h3>Flag Memory</h3>
-                        <p>Test your memory with flags from around the world. Remember the sequence and prove your skills!</p>
-                        <div class="card-footer">Coming Soon</div>
-                    </div>
-                </div>
+                <p class="hero-subtitle">
 
-                <div class="game-card" data-aos="fade-up">
-                    <div class="game-card-inner">
-                        <div class="game-icon">🔮</div>
-                        <h3>Tech Matrix</h3>
-                        <p>Navigate through a matrix of technology puzzles. Solve sequences and unlock new levels.</p>
-                        <div class="card-footer">Coming Soon</div>
-                    </div>
-                </div>
+                    Learn while playing.
 
-                <div class="game-card" data-aos="fade-up">
-                    <div class="game-card-inner">
-                        <div class="game-icon">🔧</div>
-                        <h3>Pipeline Panic</h3>
-                        <p>Connect the pipes before time runs out. Fast-paced gameplay that tests your reflexes.</p>
-                        <div class="card-footer">Coming Soon</div>
-                    </div>
-                </div>
+                    Challenge your memory.
 
-                <div class="game-card" data-aos="fade-up">
-                    <div class="game-card-inner">
-                        <div class="game-icon">📦</div>
-                        <h3>Inventory Match</h3>
-                        <p>Match items from your inventory. Strategic thinking meets quick reactions.</p>
-                        <div class="card-footer">Coming Soon</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                    Improve your logic.
 
-    <!-- Features Section -->
-    <section id="features" class="features">
-        <div class="container">
-            <h2 class="section-title">Features</h2>
-            <div class="features-grid">
-                <div class="feature-card" data-aos="fade-up">
-                    <div class="feature-icon">📱</div>
-                    <h3>Responsive</h3>
-                    <p>Works seamlessly on all devices, from mobile to desktop.</p>
-                </div>
+                    Discover new educational games powered only by HTML, CSS and JavaScript.
 
-                <div class="feature-card" data-aos="fade-up">
-                    <div class="feature-icon">⚡</div>
-                    <h3>Fast</h3>
-                    <p>Optimized performance with vanilla JavaScript for lightning-quick gameplay.</p>
-                </div>
+                </p>
 
-                <div class="feature-card" data-aos="fade-up">
-                    <div class="feature-icon">🔓</div>
-                    <h3>Open Source</h3>
-                    <p>Built with transparency. Contribute and improve the platform.</p>
-                </div>
+                <div class="hero-buttons">
 
-                <div class="feature-card" data-aos="fade-up">
-                    <div class="feature-icon">✨</div>
-                    <h3>Vanilla JS</h3>
-                    <p>No heavy frameworks. Pure, clean, and efficient code.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+                    <button
+                        class="btn btn-primary btn-glow"
+                        onclick="document.getElementById('games').scrollIntoView({behavior:'smooth'})">
 
-    <!-- Roadmap Section -->
-    <section id="roadmap" class="roadmap">
-        <div class="container">
-            <h2 class="section-title">Roadmap</h2>
-            <div class="roadmap-items">
-                <div class="roadmap-item" data-aos="fade-up">
-                    <div class="roadmap-marker">v1.0</div>
-                    <div class="roadmap-content">
-                        <h3>Alpha Launch</h3>
-                        <p>Initial release with core games and landing page</p>
-                    </div>
-                </div>
+                        🎮 Explore Games
 
-                <div class="roadmap-item" data-aos="fade-up">
-                    <div class="roadmap-marker">v1.1</div>
-                    <div class="roadmap-content">
-                        <h3>Community Features</h3>
-                        <p>Leaderboard, user profiles, and social sharing</p>
-                    </div>
-                </div>
+                    </button>
 
-                <div class="roadmap-item" data-aos="fade-up">
-                    <div class="roadmap-marker">v1.2</div>
-                    <div class="roadmap-content">
-                        <h3>Advanced Games</h3>
-                        <p>New game modes, difficulty levels, and achievements</p>
-                    </div>
-                </div>
+                    <a
+                        class="btn btn-secondary"
+                        href="https://github.com/PepeGamboa/CheeseGames"
+                        target="_blank">
 
-                <div class="roadmap-item" data-aos="fade-up">
-                    <div class="roadmap-marker">v2.0</div>
-                    <div class="roadmap-content">
-                        <h3>Mobile App</h3>
-                        <p>Native mobile applications for iOS and Android</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                        ⭐ GitHub
 
-    <!-- Footer -->
-    <footer id="footer" class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-text">
-                    <p>&copy; 2026 BrainLab. All rights reserved.</p>
-                </div>
-                <div class="footer-links">
-                    <a href="https://github.com/PepeGamboa/brainlab">
-                        <span>GitHub Repository</span>
-                        <span class="github-icon">↗</span>
                     </a>
-                </div>
-            </div>
-            <div class="footer-line"></div>
-        </div>
-    </footer>
 
-    <script src="app.js"></script>
+                </div>
+
+            </div>
+
+            <!-- ========================= -->
+            <!-- TERMINAL -->
+            <!-- ========================= -->
+
+            <div class="terminal-window">
+
+                <div class="terminal-header">
+
+                    <div class="terminal-buttons">
+
+                        <div class="terminal-btn close"></div>
+
+                        <div class="terminal-btn minimize"></div>
+
+                        <div class="terminal-btn maximize"></div>
+
+                    </div>
+
+                    <span class="terminal-title">
+
+                        CheeseGames.exe
+
+                    </span>
+
+                </div>
+
+                <div class="terminal-body">
+
+                    <p>> Boot sequence initialized...</p>
+
+                    <p>> Loading educational modules...</p>
+
+                    <p>> Loading memory engine...</p>
+
+                    <p>> Loading matrix renderer...</p>
+
+                    <p>> Synchronizing achievements...</p>
+
+                    <p class="scan-line"></p>
+
+                    <p>
+
+                        > <span class="text-success">
+
+                            ✔ System Ready
+
+                        </span>
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- GAMES -->
+    <!-- ========================= -->
+
+    <section id="games" class="games">
+
+        <div class="container">
+
+            <h2 class="section-title">
+
+                Featured Games
+
+            </h2>
+
+            <p class="section-subtitle">
+
+                More educational games are coming soon.
+
+            </p>
+
+            <div class="games-grid">
+        ```html
+<!-- ========================= -->
+<!-- GAME 1 -->
+<!-- ========================= -->
+    ```html
+<!-- ========================= -->
+<!-- GAME 1 -->
+<!-- ========================= -->
+
+<div class="game-card">
+
+    <div class="game-status available">
+        Coming Soon
+    </div>
+
+    <div class="game-card-inner">
+
+        <div class="game-icon">
+            🌍
+        </div>
+
+        <h3>Flag Memory</h3>
+
+        <p>
+
+            Memorize country flags, improve your visual memory,
+            and unlock increasingly challenging levels.
+
+        </p>
+
+        <div class="game-tags">
+
+            <span>Memory</span>
+            <span>Geography</span>
+            <span>Education</span>
+
+        </div>
+
+        <button class="card-button">
+
+            Learn More →
+
+        </button>
+
+    </div>
+
+</div>
+
+<!-- ========================= -->
+<!-- GAME 2 -->
+<!-- ========================= -->
+
+<div class="game-card">
+
+    <div class="game-status planned">
+        Planned
+    </div>
+
+    <div class="game-card-inner">
+
+        <div class="game-icon">
+            💻
+        </div>
+
+        <h3>Tech Matrix</h3>
+
+        <p>
+
+            Flip the cards, match concepts and
+            master programming, networking
+            and technology fundamentals.
+
+        </p>
+
+        <div class="game-tags">
+
+            <span>Technology</span>
+            <span>Memory</span>
+            <span>Learning</span>
+
+        </div>
+
+        <button class="card-button">
+
+            Coming Soon
+
+        </button>
+
+    </div>
+
+</div>
+
+<!-- ========================= -->
+<!-- GAME 3 -->
+<!-- ========================= -->
+
+<div class="game-card">
+
+    <div class="game-status planned">
+        Planned
+    </div>
+
+    <div class="game-card-inner">
+
+        <div class="game-icon">
+            ⚙️
+        </div>
+
+        <h3>Pipeline Panic</h3>
+
+        <p>
+
+            Build the correct pipeline,
+            think quickly,
+            optimize the flow
+            and beat the clock.
+
+        </p>
+
+        <div class="game-tags">
+
+            <span>Logic</span>
+            <span>Puzzle</span>
+            <span>Speed</span>
+
+        </div>
+
+        <button class="card-button">
+
+            Coming Soon
+
+        </button>
+
+    </div>
+
+</div>
+
+<!-- ========================= -->
+<!-- GAME 4 -->
+<!-- ========================= -->
+
+<div class="game-card">
+
+    <div class="game-status planned">
+        Planned
+    </div>
+
+    <div class="game-card-inner">
+
+        <div class="game-icon">
+            📦
+        </div>
+
+        <h3>Inventory Match</h3>
+
+        <p>
+
+            Organize objects,
+            remember positions,
+            improve concentration
+            and planning.
+
+        </p>
+
+        <div class="game-tags">
+
+            <span>Memory</span>
+            <span>Strategy</span>
+            <span>Focus</span>
+
+        </div>
+
+        <button class="card-button">
+
+            Coming Soon
+
+        </button>
+
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- FEATURES -->
+<!-- ========================= -->
+
+<section id="features" class="features">
+
+<div class="container">
+
+<h2 class="section-title">
+
+Why CheeseGames?
+
+</h2>
+
+<p class="section-subtitle">
+
+Designed for students,
+developers and lifelong learners.
+
+</p>
+
+<div class="features-grid">
+
+<div class="feature-card">
+
+<div class="feature-icon">
+
+⚡
+
+</div>
+
+<h3>
+
+Ultra Fast
+
+</h3>
+
+<p>
+
+Pure HTML, CSS and JavaScript.
+
+No frameworks.
+
+No unnecessary dependencies.
+
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<div class="feature-icon">
+
+📱
+
+</div>
+
+<h3>
+
+Responsive
+
+</h3>
+
+<p>
+
+Optimized for desktop,
+tablet and mobile devices.
+
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<div class="feature-icon">
+
+🧠
+
+</div>
+
+<h3>
+
+Brain Training
+
+</h3>
+
+<p>
+
+Games designed to improve
+memory,
+logic,
+focus
+and reaction speed.
+
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<div class="feature-icon">
+
+🌍
+
+</div>
+
+<h3>
+
+Educational
+
+</h3>
+
+<p>
+
+Learn geography,
+technology,
+history,
+science
+and much more.
+
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<div class="feature-icon">
+
+🔓
+
+</div>
+
+<h3>
+
+Open Source
+
+</h3>
+
+<p>
+
+Community driven.
+
+Everyone can contribute.
+
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<div class="feature-icon">
+
+🚀
+
+</div>
+
+<h3>
+
+Growing Platform
+
+</h3>
+
+<p>
+
+New games,
+new challenges
+and new learning experiences
+are added continuously.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+```
+```html
+<!-- ========================= -->
+<!-- ROADMAP -->
+<!-- ========================= -->
+
+<section id="roadmap" class="roadmap">
+
+    <div class="container">
+
+        <h2 class="section-title">
+
+            Development Roadmap
+
+        </h2>
+
+        <p class="section-subtitle">
+
+            CheeseGames is constantly evolving.
+
+        </p>
+
+        <div class="roadmap-timeline">
+
+            <div class="roadmap-item">
+
+                <div class="roadmap-version">
+
+                    v1.0
+
+                </div>
+
+                <div class="roadmap-info">
+
+                    <h3>Landing Page</h3>
+
+                    <p>
+
+                        Responsive website, Matrix design,
+                        animations and project presentation.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="roadmap-item">
+
+                <div class="roadmap-version">
+
+                    v1.1
+
+                </div>
+
+                <div class="roadmap-info">
+
+                    <h3>Flag Memory</h3>
+
+                    <p>
+
+                        First playable educational game
+                        with score and timer.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="roadmap-item">
+
+                <div class="roadmap-version">
+
+                    v1.5
+
+                </div>
+
+                <div class="roadmap-info">
+
+                    <h3>User Profiles</h3>
+
+                    <p>
+
+                        Local progress,
+                        achievements,
+                        statistics
+                        and settings.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="roadmap-item">
+
+                <div class="roadmap-version">
+
+                    v2.0
+
+                </div>
+
+                <div class="roadmap-info">
+
+                    <h3>Online Platform</h3>
+
+                    <p>
+
+                        Accounts,
+                        cloud synchronization,
+                        leaderboards
+                        and multiplayer.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- CALL TO ACTION -->
+<!-- ========================= -->
+
+<section class="cta">
+
+    <div class="container">
+
+        <div class="cta-box">
+
+            <h2>
+
+                Ready to train your brain?
+
+            </h2>
+
+            <p>
+
+                CheeseGames will become a collection of
+                lightweight educational games designed
+                for everyone.
+
+            </p>
+
+            <a
+                href="https://github.com/PepeGamboa/CheeseGames"
+                target="_blank"
+                class="btn btn-primary btn-glow">
+
+                ⭐ Follow the Project
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- FOOTER -->
+<!-- ========================= -->
+
+<footer id="footer" class="footer">
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div>
+
+                <h3>
+
+                    🧀 CheeseGames
+
+                </h3>
+
+                <p>
+
+                    Learn.
+                    Play.
+                    Improve.
+
+                </p>
+
+            </div>
+
+            <div>
+
+                <h4>
+
+                    Games
+
+                </h4>
+
+                <ul>
+
+                    <li>Flag Memory</li>
+                    <li>Tech Matrix</li>
+                    <li>Pipeline Panic</li>
+                    <li>Inventory Match</li>
+
+                </ul>
+
+            </div>
+
+            <div>
+
+                <h4>
+
+                    Project
+
+                </h4>
+
+                <ul>
+
+                    <li>
+
+                        <a href="#roadmap">
+
+                            Roadmap
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="#features">
+
+                            Features
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <div>
+
+                <h4>
+
+                    GitHub
+
+                </h4>
+
+                <a
+
+                    class="github-link"
+
+                    href="https://github.com/PepeGamboa/CheeseGames"
+
+                    target="_blank">
+
+                    github.com/PepeGamboa/CheeseGames
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <div class="footer-bottom">
+
+            <p>
+
+                © 2026 CheeseGames
+
+            </p>
+
+            <p>
+
+                Built with ❤️ using HTML, CSS & Vanilla JavaScript.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<!-- Matrix Background -->
+
+<canvas id="matrixCanvas"></canvas>
+
+<script src="js/app.js"></script>
+
 </body>
+
 </html>
+```
