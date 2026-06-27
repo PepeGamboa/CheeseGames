@@ -148,14 +148,35 @@ p {
     letter-spacing: 1px;
 }
 
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-}
+    .lang-selector {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+        margin-right: 1rem;
+    }
 
-.nav-links a {
-    color: var(--text-primary);
+    .lang-flag {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        border: 1px solid rgba(0, 255, 65, 0.2);
+        background: rgba(13, 17, 23, 0.8);
+        color: var(--primary-color);
+        cursor: pointer;
+        font-size: 1.1rem;
+        line-height: 1;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: var(--transition);
+    }
+
+    .lang-flag.active,
+    .lang-flag:hover {
+        border-color: var(--primary-color);
+        box-shadow: 0 0 10px rgba(0, 255, 65, 0.2);
+    }
+
     text-decoration: none;
     font-size: 0.9rem;
     transition: var(--transition);
@@ -498,6 +519,7 @@ p {
         transparent
     );
     animation: shimmer 3s infinite;
+    pointer-events: none;
 }
 
 @keyframes shimmer {
@@ -945,6 +967,248 @@ p {
 }
 
 /* Smooth scroll for older browsers */
+@media (max-width: 480px) {
+    body {
+        font-size: 0.95rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .nav-links {
+        gap: 0.5rem;
+        font-size: 0.75rem;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.85rem;
+    }
+}
+
+/* ============================================
+   FLAG MEMORY GAME STYLES
+   ============================================ */
+
+.hero.game-hero {
+    min-height: 0 !important;
+    height: auto !important;
+    padding: 60px 0 40px !important;
+    overflow: visible !important;
+}
+
+.hero.game-hero .hero-container {
+    display: grid;
+    grid-template-columns: 1.4fr 0.6fr;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.hero.game-hero .hero-content {
+    max-width: 100%;
+}
+
+.flag-summary {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.flag-memory {
+    padding-top: 40px;
+}
+
+.flag-summary-card {
+    background: rgba(0, 255, 65, 0.05);
+    border: 1px solid rgba(0, 255, 65, 0.15);
+    border-radius: 18px;
+    padding: 2rem;
+    max-width: 380px;
+    box-shadow: 0 0 30px rgba(0, 255, 65, 0.08);
+}
+
+.flag-summary-card h3 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.game-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.stat-item {
+    background: rgba(13, 17, 23, 0.9);
+    border: 1px solid rgba(0, 255, 65, 0.12);
+    border-radius: 12px;
+    padding: 1rem;
+    text-align: center;
+}
+
+.stat-label {
+    display: block;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.stat-value {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.flag-memory {
+    padding: 80px 0;
+}
+
+.memory-board {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.memory-card {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    background: var(--surface);
+    border: 2px solid var(--border-color);
+    border-radius: 20px;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    overflow: hidden;
+}
+
+.memory-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0, 255, 65, 0.08), transparent 70%);
+    pointer-events: none;
+}
+
+.memory-card:hover {
+    box-shadow: 0 15px 30px rgba(0, 255, 65, 0.15);
+}
+
+.memory-card.flipped,
+.memory-card.matched {
+    transform: rotateY(180deg);
+    border-color: var(--primary-color);
+}
+
+.memory-card .card-front,
+.memory-card .card-back {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    backface-visibility: hidden;
+    font-size: 2.2rem;
+    letter-spacing: 0.2rem;
+}
+
+.memory-card .card-front {
+    background: var(--surface-light);
+    color: var(--text-primary);
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.memory-card .card-back {
+    background: linear-gradient(180deg, rgba(0, 255, 65, 0.12), rgba(0, 255, 65, 0.03));
+    transform: rotateY(180deg);
+    color: var(--primary-color);
+}
+
+.memory-card.matched .card-back {
+    color: var(--secondary-color);
+}
+
+.game-message {
+    margin-top: 2rem;
+    text-align: center;
+    background: rgba(0, 255, 65, 0.05);
+    border: 1px solid rgba(0, 255, 65, 0.12);
+    padding: 2rem;
+    border-radius: 18px;
+    box-shadow: 0 0 30px rgba(0, 255, 65, 0.08);
+}
+
+.game-message.hidden {
+    display: none;
+}
+
+.game-message h2 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.message-details {
+    color: var(--text-secondary);
+    margin-bottom: 1.25rem;
+}
+
+.card-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    font-size: 0.95rem;
+    font-family: 'Courier New', monospace;
+    border: 2px solid var(--primary-color);
+    background: transparent;
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: var(--transition);
+    letter-spacing: 1px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.card-button:hover {
+    background: rgba(0, 255, 65, 0.12);
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.15);
+}
+
+@media (max-width: 980px) {
+    .game-hero .hero-container {
+        grid-template-columns: 1fr;
+    }
+
+    .flag-summary {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 680px) {
+    .memory-board {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .memory-board {
+        grid-template-columns: 1fr;
+    }
+}
+
 @supports not (scroll-behavior: smooth) {
     html {
         scroll-behavior: auto;

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="flag.page.title">🧠 Flag Memory | CheeseGames</title>
+    <meta name="description" data-i18n="flag.page.description" content="Flag Memory is an educational memory game to learn country flags while matching pairs.">
+    <meta name="theme-color" content="#00ff66">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <a class="logo-text" href="index.html">🧀 CheeseGames</a>
+            </div>
+            <div class="lang-selector" aria-label="Language selector">
+                <button type="button" class="lang-flag active" data-lang="en" title="English">🇬🇧</button>
+                <button type="button" class="lang-flag" data-lang="es" title="Español">🇪🇸</button>
+                <button type="button" class="lang-flag" data-lang="it" title="Italiano">🇮🇹</button>
+                <button type="button" class="lang-flag" data-lang="fr" title="Français">🇫🇷</button>
+                <button type="button" class="lang-flag" data-lang="de" title="Deutsch">🇩🇪</button>
+                <button type="button" class="lang-flag" data-lang="pt" title="Português">🇵🇹</button>
+                <button type="button" class="lang-flag" data-lang="hi" title="हिन्दी">🇮🇳</button>
+                <button type="button" class="lang-flag" data-lang="ko" title="한국어">🇰🇷</button>
+                <button type="button" class="lang-flag" data-lang="ja" title="日本語">🇯🇵</button>
+                <button type="button" class="lang-flag" data-lang="zh" title="中文">🇨🇳</button>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+                <li><a href="index.html#games" data-i18n="nav.games">Games</a></li>
+                <li><a href="index.html#features" data-i18n="nav.features">Features</a></li>
+                <li><a href="index.html#roadmap" data-i18n="nav.roadmap">Roadmap</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero game-hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <span class="hero-badge" data-i18n="flag.hero.badge">Memory • 10 Flags • Learning</span>
+                <h1 class="hero-title" data-i18n="flag.hero.title">Flag Memory</h1>
+                <p class="hero-subtitle" data-i18n="flag.hero.subtitle">Match 10 world flags, train your visual memory, and learn geography in a fast-paced retro arcade interface.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" id="restartButton" data-i18n="flag.hero.start">Start New Game</button>
+                    <a class="btn btn-secondary" href="index.html" data-i18n="flag.hero.back">Back to Home</a>
+                </div>
+            </div>
+            <div class="flag-summary">
+                <div class="flag-summary-card">
+                    <h3 data-i18n="flag.summary.title">How to play</h3>
+                    <p data-i18n="flag.summary.description">Flip two cards to find matching flag pairs. Complete the board with the fewest moves and fastest time.</p>
+                    <div class="game-stats">
+                        <div class="stat-item">
+                            <span class="stat-label" data-i18n="flag.stats.moves">Moves</span>
+                            <span class="stat-value" id="movesCount">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label" data-i18n="flag.stats.matches">Matches</span>
+                            <span class="stat-value" id="matchCount">0 / 10</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label" data-i18n="flag.stats.time">Time</span>
+                            <span class="stat-value" id="timerCount">0s</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="flag-memory">
+        <div class="container">
+            <div class="memory-board" id="memoryBoard" aria-live="polite"></div>
+            <div class="game-message hidden" id="gameMessage">
+                <h2 data-i18n="flag.complete.title">¡Juego completado!</h2>
+                <p data-i18n="flag.complete.description">Has encontrado todas las banderas.</p>
+                <p class="message-details" id="messageDetails"></p>
+                <button class="btn btn-primary" id="playAgainButton" data-i18n="flag.complete.button">Jugar otra vez</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/flag-memory.js"></script>
+    <script src="js/navigation-fix.js"></script>
+</body>
+
+</html>

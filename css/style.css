@@ -182,6 +182,16 @@ p {
     width: 100%;
 }
 
+/* language selector must be on top and receive pointer events */
+.lang-selector {
+    position: relative;
+    z-index: 9999;
+    pointer-events: auto;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
 @media (max-width: 768px) {
     .nav-links {
         gap: 1rem;
@@ -789,6 +799,17 @@ p {
     z-index: 2;
 }
 
+/* Matrix canvas and overlay should not block pointer events */
+#matrixCanvas,
+.matrix-overlay {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
 .footer-text p {
     color: var(--text-secondary);
     font-size: 0.9rem;
@@ -948,5 +969,223 @@ p {
 @supports not (scroll-behavior: smooth) {
     html {
         scroll-behavior: auto;
+    }
+}
+
+/* ============================================
+   LANG FLAG BUTTONS
+   ============================================ */
+
+.lang-flag {
+    background: none;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.3rem;
+    padding: 2px 4px;
+    line-height: 1;
+    transition: border-color 0.2s, transform 0.15s;
+    pointer-events: auto;
+}
+
+.lang-flag:hover {
+    border-color: var(--primary-color);
+    transform: scale(1.15);
+}
+
+.lang-flag.active {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 6px var(--primary-color);
+}
+
+/* ============================================
+   FLAG MEMORY GAME - BOARD & CARDS
+   ============================================ */
+
+.flag-memory {
+    padding: 2rem 0 4rem;
+}
+
+.memory-board {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+@media (max-width: 600px) {
+    .memory-board {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.6rem;
+    }
+}
+
+.memory-card {
+    aspect-ratio: 1;
+    background: var(--surface);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    overflow: hidden;
+}
+
+.memory-card:hover:not(.matched):not(.flipped) {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 12px rgba(0,255,65,0.3);
+}
+
+.memory-card .card-front,
+.memory-card .card-back {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.25s ease;
+}
+
+/* ? symbol when face-down */
+.memory-card .card-front {
+    background: var(--surface-light);
+    color: var(--primary-color);
+    font-size: 2.2rem;
+    font-weight: bold;
+    opacity: 1;
+}
+
+/* Flag emoji when face-up — LARGE */
+.memory-card .card-back {
+    background: var(--surface);
+    font-size: 4rem;     /* ← big emoji */
+    opacity: 0;
+}
+
+/* Flipped state */
+.memory-card.flipped .card-front {
+    opacity: 0;
+}
+.memory-card.flipped .card-back {
+    opacity: 1;
+}
+
+/* Matched state */
+.memory-card.matched {
+    border-color: var(--primary-color);
+    background: rgba(0,255,65,0.06);
+    box-shadow: 0 0 14px rgba(0,255,65,0.35);
+    cursor: default;
+}
+.memory-card.matched .card-front { opacity: 0; }
+.memory-card.matched .card-back  { opacity: 1; }
+
+/* ============================================
+   GAME STATS & SUMMARY
+   ============================================ */
+
+.flag-summary {
+    display: flex;
+    align-items: flex-start;
+}
+
+.flag-summary-card {
+    background: var(--surface);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    width: 100%;
+}
+
+.flag-summary-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.flag-summary-card p {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.game-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.4rem;
+}
+
+.stat-label { color: var(--text-secondary); }
+.stat-value { color: var(--primary-color); font-weight: bold; }
+
+/* ============================================
+   GAME COMPLETE MESSAGE
+   ============================================ */
+
+.game-message {
+    text-align: center;
+    padding: 3rem 2rem;
+    margin: 2rem auto;
+    max-width: 500px;
+    background: var(--surface);
+    border: 2px solid var(--primary-color);
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(0,255,65,0.2);
+}
+
+.game-message h2 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px var(--primary-color);
+}
+
+.game-message p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.message-details {
+    font-size: 0.9rem;
+    color: var(--secondary-color) !important;
+    margin-bottom: 1.5rem !important;
+}
+
+.game-message.hidden { display: none; }
+
+/* ============================================
+   GAME HERO (subpages)
+   ============================================ */
+
+.game-hero {
+    min-height: auto;
+    padding-top: 100px;
+    padding-bottom: 2rem;
+}
+
+.game-hero .hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+@media (max-width: 768px) {
+    .game-hero .hero-container {
+        grid-template-columns: 1fr;
     }
 }

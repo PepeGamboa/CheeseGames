@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="tech.page.title">Tech Matrix | CheeseGames</title>
+    <meta name="description" data-i18n="tech.page.description" content="Tech Matrix is an educational matching game about technology concepts.">
+    <meta name="theme-color" content="#00ff66">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <a class="logo-text" href="index.html">🧀 CheeseGames</a>
+            </div>
+            <div class="lang-selector" aria-label="Language selector">
+                <button type="button" class="lang-flag active" data-lang="en" title="English">🇬🇧</button>
+                <button type="button" class="lang-flag" data-lang="es" title="Español">🇪🇸</button>
+                <button type="button" class="lang-flag" data-lang="it" title="Italiano">🇮🇹</button>
+                <button type="button" class="lang-flag" data-lang="fr" title="Français">🇫🇷</button>
+                <button type="button" class="lang-flag" data-lang="de" title="Deutsch">🇩🇪</button>
+                <button type="button" class="lang-flag" data-lang="pt" title="Português">🇵🇹</button>
+                <button type="button" class="lang-flag" data-lang="hi" title="हिन्दी">🇮🇳</button>
+                <button type="button" class="lang-flag" data-lang="ko" title="한국어">🇰🇷</button>
+                <button type="button" class="lang-flag" data-lang="ja" title="日本語">🇯🇵</button>
+                <button type="button" class="lang-flag" data-lang="zh" title="中文">🇨🇳</button>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+                <li><a href="index.html#games" data-i18n="nav.games">Games</a></li>
+                <li><a href="index.html#features" data-i18n="nav.features">Features</a></li>
+                <li><a href="index.html#roadmap" data-i18n="nav.roadmap">Roadmap</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero game-hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <span class="hero-badge" data-i18n="tech.hero.badge">Technology • Match • Learn</span>
+                <h1 class="hero-title" data-i18n="tech.hero.title">Tech Matrix</h1>
+                <p class="hero-subtitle" data-i18n="tech.hero.subtitle">Flip cards to match technology concepts and learn fundamentals in a playful interface.</p>
+                <div class="hero-buttons">
+                    <button type="button" class="btn btn-primary" id="startTechButton" data-i18n="tech.hero.start">Start New Game</button>
+                    <a class="btn btn-secondary" href="index.html" data-i18n="tech.hero.back">Back to Home</a>
+                </div>
+            </div>
+            <div class="flag-summary">
+                <div class="flag-summary-card">
+                    <h3 data-i18n="tech.summary.title">How to play</h3>
+                    <p data-i18n="tech.summary.description">Flip two cards to find matching concept pairs. Practice concepts and improve recall.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="tech-matrix">
+        <div class="container">
+            <div class="placeholder">
+                <p>This is a placeholder page for Tech Matrix. Game coming soon.</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/navigation-fix.js"></script>
+</body>
+
+</html>

@@ -190,6 +190,8 @@ class InteractiveElements {
         const buttons = document.querySelectorAll('.btn');
         
         buttons.forEach(button => {
+            // skip language selector flags
+            if (button.classList && button.classList.contains('lang-flag')) return;
             button.addEventListener('mouseenter', () => {
                 this.createRipple(button);
             });
