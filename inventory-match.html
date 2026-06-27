@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="inventory.page.title">Inventory Match | 🧀 Cheese 🧠 Games</title>
-    <meta name="description" data-i18n="inventory.page.description" content="Inventory Match is a spatial memory and organization game.">
+    <meta name="description" data-i18n="inventory.page.description" content="Memorize item positions and recreate the inventory layout to advance.">
     <meta name="theme-color" content="#00ff66">
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
     <nav class="navbar">
         <div class="container nav-container">
@@ -42,7 +40,7 @@
             <div class="hero-content">
                 <span class="hero-badge" data-i18n="inventory.hero.badge">Memory • Organization • Focus</span>
                 <h1 class="hero-title" data-i18n="inventory.hero.title">Inventory Match</h1>
-                <p class="hero-subtitle" data-i18n="inventory.hero.subtitle">Arrange and remember item positions to clear levels and improve spatial memory.</p>
+                <p class="hero-subtitle" data-i18n="inventory.hero.subtitle">Study the item layout, then recreate it from memory!</p>
                 <div class="hero-buttons">
                     <button type="button" class="btn btn-primary" id="startInventoryButton" data-i18n="inventory.hero.start">Start New Game</button>
                     <a class="btn btn-secondary" href="index.html" data-i18n="inventory.hero.back">Back to Home</a>
@@ -51,22 +49,55 @@
             <div class="flag-summary">
                 <div class="flag-summary-card">
                     <h3 data-i18n="inventory.summary.title">How to play</h3>
-                    <p data-i18n="inventory.summary.description">Remember positions of items and recreate the layout to advance.</p>
+                    <p data-i18n="inventory.summary.description">Memorize item positions, then recreate the exact layout. Pick items from the palette and place them!</p>
+                    <div class="game-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Level</span>
+                            <span class="stat-value" id="invLevel">Level 1</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Phase</span>
+                            <span class="stat-value" id="invPhase">Memorize!</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Score</span>
+                            <span class="stat-value" id="invScore">0</span>
+                        </div>
+                    </div>
+                    <p id="invCountdown" style="color:var(--accent-color);font-size:1.5rem;font-weight:bold;text-align:center;margin-top:0.5rem;"></p>
                 </div>
             </div>
         </div>
     </section>
 
-    <main class="inventory-match">
+    <main class="inventory-game">
         <div class="container">
-            <div class="placeholder">
-                <p>This is a placeholder page for Inventory Match. Game coming soon.</p>
+            <!-- Item palette (hidden during memorize) -->
+            <div class="inv-palette-wrapper" id="invPaletteWrapper">
+                <h3 class="inv-palette-title">🎒 Item Palette — select then click the grid</h3>
+                <div class="inv-palette" id="inventoryPalette"></div>
+                <button type="button" class="btn btn-primary" id="invSubmit" style="display:none;margin-top:1rem;">
+                    ✅ Submit Answer
+                </button>
+            </div>
+
+            <!-- Game grid -->
+            <div class="inventory-grid" id="inventoryGrid"></div>
+
+            <!-- Result message -->
+            <div class="game-message hidden" id="invMessage">
+                <h2 id="invMessageTitle">🏆 Perfect!</h2>
+                <p class="message-details" id="invDetails"></p>
+                <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:1rem;">
+                    <button class="btn btn-primary" id="invRetry">Retry Level</button>
+                    <button class="btn btn-secondary" id="invNextLevel" style="display:none;">Next Level →</button>
+                </div>
             </div>
         </div>
     </main>
 
     <script src="js/i18n.js"></script>
+    <script src="js/inventory-match.js"></script>
     <script src="js/navigation-fix.js"></script>
 </body>
-
 </html>

@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="pipeline.page.title">Pipeline Panic | 🧀 Cheese 🧠 Games</title>
-    <meta name="description" data-i18n="pipeline.page.description" content="Pipeline Panic is a logic puzzle game about building pipelines under pressure.">
+    <meta name="description" data-i18n="pipeline.page.description" content="Rotate pipeline pieces to connect the source to the sink before time runs out!">
     <meta name="theme-color" content="#00ff66">
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
     <nav class="navbar">
         <div class="container nav-container">
@@ -42,7 +40,7 @@
             <div class="hero-content">
                 <span class="hero-badge" data-i18n="pipeline.hero.badge">Logic • Speed • Challenge</span>
                 <h1 class="hero-title" data-i18n="pipeline.hero.title">Pipeline Panic</h1>
-                <p class="hero-subtitle" data-i18n="pipeline.hero.subtitle">Build and route pipelines quickly to connect nodes and beat the clock.</p>
+                <p class="hero-subtitle" data-i18n="pipeline.hero.subtitle">Click pipes to rotate them. Connect 🚰 to 🏁 before time runs out!</p>
                 <div class="hero-buttons">
                     <button type="button" class="btn btn-primary" id="startPipelineButton" data-i18n="pipeline.hero.start">Start New Game</button>
                     <a class="btn btn-secondary" href="index.html" data-i18n="pipeline.hero.back">Back to Home</a>
@@ -51,22 +49,40 @@
             <div class="flag-summary">
                 <div class="flag-summary-card">
                     <h3 data-i18n="pipeline.summary.title">How to play</h3>
-                    <p data-i18n="pipeline.summary.description">Rotate and place pipeline pieces to create a valid flow before time runs out.</p>
+                    <p data-i18n="pipeline.summary.description">Click any pipe piece to rotate it 90°. Create a connected path from 🚰 source to 🏁 sink!</p>
+                    <div class="game-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Level</span>
+                            <span class="stat-value" id="pipeLevel">Level 1</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Time Left</span>
+                            <span class="stat-value" id="pipeTimer">90s</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <main class="pipeline-panic">
+    <main class="pipeline-game">
         <div class="container">
-            <div class="placeholder">
-                <p>This is a placeholder page for Pipeline Panic. Game coming soon.</p>
+            <div class="pipeline-board-wrapper">
+                <div class="pipeline-board" id="pipelineBoard"></div>
+            </div>
+            <div class="game-message hidden" id="pipeMessage">
+                <h2 id="pipeMessageTitle">🎉 Pipeline Connected!</h2>
+                <p class="message-details" id="pipeDetails"></p>
+                <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:1rem;">
+                    <button class="btn btn-primary" id="pipeRetry">Retry Level</button>
+                    <button class="btn btn-secondary" id="pipeNextLevel" style="display:none;">Next Level →</button>
+                </div>
             </div>
         </div>
     </main>
 
     <script src="js/i18n.js"></script>
+    <script src="js/pipeline-panic.js"></script>
     <script src="js/navigation-fix.js"></script>
 </body>
-
 </html>

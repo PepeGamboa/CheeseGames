@@ -5,7 +5,7 @@ const flags = [
     { country: 'France', emoji: '🇫🇷' },
     { country: 'Germany', emoji: '🇩🇪' },
     { country: 'Japan', emoji: '🇯🇵' },
-    { country: 'Kenya', emoji: '🇰🇪' },
+    { country: 'Colombia', emoji: '🇨🇴' },
     { country: 'Spain', emoji: '🇪🇸' },
     { country: 'South Korea', emoji: '🇰🇷' },
     { country: 'United Kingdom', emoji: '🇬🇧' }

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +8,6 @@
     <meta name="theme-color" content="#00ff66">
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
     <nav class="navbar">
         <div class="container nav-container">
@@ -42,31 +40,55 @@
             <div class="hero-content">
                 <span class="hero-badge" data-i18n="tech.hero.badge">Technology • Match • Learn</span>
                 <h1 class="hero-title" data-i18n="tech.hero.title">Tech Matrix</h1>
-                <p class="hero-subtitle" data-i18n="tech.hero.subtitle">Flip cards to match technology concepts and learn fundamentals in a playful interface.</p>
+                <p class="hero-subtitle" data-i18n="tech.hero.subtitle">Match tech terms with their definitions. Level up your knowledge!</p>
                 <div class="hero-buttons">
                     <button type="button" class="btn btn-primary" id="startTechButton" data-i18n="tech.hero.start">Start New Game</button>
                     <a class="btn btn-secondary" href="index.html" data-i18n="tech.hero.back">Back to Home</a>
+                </div>
+                <!-- Difficulty selector -->
+                <div class="difficulty-selector" style="margin-top:1.5rem; display:flex; gap:0.75rem; flex-wrap:wrap;">
+                    <button type="button" class="btn diff-btn active" data-diff="easy" style="padding:6px 18px;font-size:0.8rem;">Easy (8)</button>
+                    <button type="button" class="btn diff-btn" data-diff="medium" style="padding:6px 18px;font-size:0.8rem;">Medium (10)</button>
+                    <button type="button" class="btn diff-btn" data-diff="hard" style="padding:6px 18px;font-size:0.8rem;">Hard (12)</button>
                 </div>
             </div>
             <div class="flag-summary">
                 <div class="flag-summary-card">
                     <h3 data-i18n="tech.summary.title">How to play</h3>
-                    <p data-i18n="tech.summary.description">Flip two cards to find matching concept pairs. Practice concepts and improve recall.</p>
+                    <p data-i18n="tech.summary.description">Flip two cards to find matching tech term + definition pairs.</p>
+                    <div class="game-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Moves</span>
+                            <span class="stat-value" id="techMoves">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Matches</span>
+                            <span class="stat-value" id="techMatches">0 / 8</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Time</span>
+                            <span class="stat-value" id="techTimer">0s</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <main class="tech-matrix">
+    <main class="tech-matrix-game">
         <div class="container">
-            <div class="placeholder">
-                <p>This is a placeholder page for Tech Matrix. Game coming soon.</p>
+            <div class="tech-board" id="techBoard" aria-live="polite"></div>
+            <div class="game-message hidden" id="techMessage">
+                <h2>🎉 Level Complete!</h2>
+                <p>You matched all the tech concepts!</p>
+                <p class="message-details" id="techDetails"></p>
+                <button class="btn btn-primary" id="techPlayAgain">Play Again</button>
             </div>
         </div>
     </main>
 
     <script src="js/i18n.js"></script>
+    <script src="js/tech-matrix.js"></script>
     <script src="js/navigation-fix.js"></script>
 </body>
-
 </html>
